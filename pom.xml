@@ -11,6 +11,7 @@
     <modules>
         <module>builder</module>
         <module>strategy</module>
+        <module>Template</module>
     </modules>
 
     <properties>
