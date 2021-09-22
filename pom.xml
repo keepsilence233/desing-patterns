@@ -13,6 +13,7 @@
         <module>strategy</module>
         <module>Template</module>
         <module>jdkProxy</module>
+        <module>cglibProxy</module>
     </modules>
 
     <properties>
