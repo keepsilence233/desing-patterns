@@ -12,6 +12,7 @@
         <module>builder</module>
         <module>strategy</module>
         <module>Template</module>
+        <module>jdkProxy</module>
     </modules>
 
     <properties>
