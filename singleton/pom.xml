@@ -2,20 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>disign-patterns</artifactId>
+        <groupId>qx.leizige</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>qx.leizige</groupId>
-    <artifactId>disign-patterns</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <modules>
-        <module>builder</module>
-        <module>strategy</module>
-        <module>Template</module>
-        <module>jdkProxy</module>
-        <module>cglibProxy</module>
-        <module>singleton</module>
-    </modules>
+    <artifactId>singleton</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -23,20 +17,12 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.76</version>
-        </dependency>
-
     </dependencies>
 
 </project>
