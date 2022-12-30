@@ -16,7 +16,8 @@
 		<module>cglibProxy</module>
 		<module>singleton</module>
 		<module>filter</module>
-	</modules>
+        <module>step-builder</module>
+    </modules>
 
 	<properties>
 		<maven.compiler.source>8</maven.compiler.source>
