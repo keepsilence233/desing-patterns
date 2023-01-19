@@ -7,17 +7,14 @@ import qx.leizige.filter.filter.LogFilter;
 public class FilterTest {
 
 
-	@Test
-	public void test() {
+    @Test
+    public void test() {
 
-		FilterManager filterManager = new FilterManager(new Target());
-		filterManager.setFilter(new AuthenticationFilter());
-		filterManager.setFilter(new LogFilter());
+        FilterManager filterManager = new FilterManager(new Target());
+        filterManager.setFilter(new AuthenticationFilter());
+        filterManager.setFilter(new LogFilter());
 
-
-		Client client = new Client();
-		client.setFilterManager(filterManager);
-		client.sendRequest("666");
-	}
+        filterManager.process("666");
+    }
 
 }

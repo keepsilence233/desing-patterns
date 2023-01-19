@@ -5,5 +5,9 @@ package qx.leizige.filter;
  */
 public interface Filter {
 
-	void execute(String request);
+	void init(String request);
+
+	void destroy(String request);
+
+	void doFilter(String request);
 }

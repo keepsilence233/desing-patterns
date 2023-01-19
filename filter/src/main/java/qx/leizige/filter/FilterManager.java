@@ -5,18 +5,17 @@ package qx.leizige.filter;
  */
 public class FilterManager {
 
-	private FilterChain filterChain;
+    private static final FilterChain filterChain = new FilterChain();
 
-	public FilterManager(Target target){
-		this.filterChain = new FilterChain();
-		filterChain.setTarget(target);
-	}
+    public FilterManager(Target target) {
+        filterChain.setTarget(target);
+    }
 
-	public void setFilter(Filter filter){
-		filterChain.addFilter(filter);
-	}
+    public void setFilter(Filter filter) {
+        filterChain.addFilter(filter);
+    }
 
-	public void filterRequest(String request){
-		filterChain.execute(request);
-	}
+    public void process(String request) {
+        filterChain.doFilter(request);
+    }
 }

@@ -1,5 +1,7 @@
 package qx.leizige.filter;
 
+import com.google.common.collect.Lists;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -9,22 +11,29 @@ import java.util.Objects;
  */
 public class FilterChain {
 
-	private List<Filter> filters = new ArrayList<>();
+    private final List<Filter> filters = Lists.newLinkedList();
 
-	private Target target;
+    private Target target;
 
-	public void addFilter(Filter filter) {
-		Objects.requireNonNull(filter, "filter");
-		filters.add(filter);
-	}
+    public void addFilter(Filter filter) {
+        Objects.requireNonNull(filter, "filter");
+        filters.add(filter);
+    }
 
+    public void doFilter(String request) {
+        filters.forEach(filter -> {
+            exec(filter, request);
+        });
+        target.execute(request);
+    }
 
-	public void execute(String request) {
-		filters.forEach(filter -> filter.execute(request));
-		target.execute(request);
-	}
+    private void exec(Filter filter, String request) {
+        filter.init(request);
+        filter.doFilter(request);
+        filter.destroy(request);
+    }
 
-	void setTarget(Target target) {
-		this.target = target;
-	}
+    void setTarget(Target target) {
+        this.target = target;
+    }
 }
